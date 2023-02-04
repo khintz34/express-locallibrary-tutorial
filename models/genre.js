@@ -6,7 +6,7 @@ const GenreSchema = new Schema({
   name: { type: String, required: true, maxLength: 100, minLength: 3 },
 });
 
-// Virtual for author's URL
+// Virtual for genre's URL
 GenreSchema.virtual("url").get(function () {
   return `/catalog/genre/${this._id}`;
 });

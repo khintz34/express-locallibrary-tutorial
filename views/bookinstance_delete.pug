@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 #{title}: #{bookinstance._id}
+
+  div(style='margin-left:20px;margin-top:20px')
+    h4 Book Instance Details:  
+    h3 Status: #{bookinstance.status}
+    h3 Imprint: #{bookinstance.imprint}
+    h3 Due Back Date: #{bookinstance.due_back_formatted}
+    
+
+      
+
+    form(method='POST' action='')
+      div.form-group
+        input#bookinstanceid.form-control(type='hidden',name='bookinstanceid', required='true', value=bookinstance._id )
+
+      button.btn.btn-primary(type='submit') Delete
